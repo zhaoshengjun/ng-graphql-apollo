@@ -31,12 +31,12 @@ const resolvers = {
   Mutation: {
     upvote: (root, { id }) => {
       const course = coursesData.filter(course => course.id === id)[0];
-      course.upvote++;
+      course.voteCount++;
       return course;
     },
     downvote: (root, { id }) => {
       const course = coursesData.filter(course => course.id === id)[0];
-      course.upvote--;
+      course.voteCount--;
       return course;
     },
     addCourse: (root, { title, author, description, topic, url }) => {
